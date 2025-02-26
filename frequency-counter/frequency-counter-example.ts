@@ -1,6 +1,6 @@
-type FrequencyCounterType = { [key: number]: number };
+export type FrequencyCounterType = { [key: number]: number };
 
-function same(arr1: number[], arr2: number[]): boolean {
+export function same(arr1: number[], arr2: number[]): boolean {
   if (arr1.length != arr2.length) return false;
   let frequencyCounter1: FrequencyCounterType = {};
   let frequencyCounter2: FrequencyCounterType = {};
@@ -10,7 +10,6 @@ function same(arr1: number[], arr2: number[]): boolean {
   for (let val of arr2) {
     frequencyCounter2[val] = (frequencyCounter2[val] || 0) + 1;
   }
-  console.log(frequencyCounter1, frequencyCounter2);
   for (let key in frequencyCounter1) {
     let keyNum = parseInt(key);
     if (!(keyNum ** 2 in frequencyCounter2)) return false;
